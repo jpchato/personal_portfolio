@@ -63,3 +63,18 @@ footer {
     text-align: center; 
     width: 100%;
 }
+
+#project{
+    color: #3c3c3b;
+}
+
+#disc-img {
+    float: left;
+    width: 100%;
+}
+
+img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: left;
+}
