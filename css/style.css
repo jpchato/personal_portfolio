@@ -1,0 +1,65 @@
+body {
+    background-color: #ff7e30;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+    
+    /* reference: https://fonts.google.com/specimen/Roboto+Slab?preview.text=channel%20orange&preview.text_type=custom&query=robot&sidebar.open=true&selection.family=Roboto+Slab#standard-styles */
+}
+
+header {
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 25px 25px 25px 25px;
+    width: 100%;
+    text-align: center;
+    color: #39393a;
+}
+
+h3 {
+    width: 100%;
+}
+
+h2 {
+    width: 100%;
+    text-align: center;
+}
+
+h4 {
+    width: 49%;
+}
+
+section {
+    overflow: hidden;
+    float: left;
+    width: 49%;
+    
+}
+
+p {
+    float: left;
+    text-indent: 50px;
+    text-align: justify;
+}
+
+nav {
+    text-align: center; 
+    /* border: 1px white solid; */
+    width: 100%;
+    
+
+}
+
+a {
+    color: #666370;
+    margin: 10px;
+}
+
+li {
+    list-style: none;
+}
+
+footer {
+    float: left;
+    text-align: center; 
+    width: 100%;
+}
