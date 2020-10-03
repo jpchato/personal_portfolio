@@ -45,13 +45,15 @@ nav {
     text-align: center; 
     /* border: 1px white solid; */
     width: 100%;
-    
-
 }
 
 a {
     color: #666370;
     margin: 10px;
+}
+
+ul {
+    padding-left: 1px;
 }
 
 li {
@@ -62,6 +64,7 @@ footer {
     float: left;
     text-align: center; 
     width: 100%;
+    margin: 25px 25px 25px 25px;
 }
 
 #project{
