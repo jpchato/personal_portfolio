@@ -1,3 +1,4 @@
+
 body {
     background-color: #ff7e30;
     font-family: 'Roboto Slab', serif;
@@ -124,3 +125,71 @@ iframe {
     width: 50%;
 }
 
+section h4 {
+    text-decoration: underline;
+}
+
+#discBot iframe {
+    width: 1500px;
+    height: 600px;;
+}
+
+iframe {
+    width: 600px;
+    height: 850px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: #FFDFD3;
+        color: #957DAD;
+      
+    }
+
+    a {
+        color: #D291BC;
+    }
+
+    h4 {
+        color: #957dad
+    }
+
+    #resume {
+        border: solid lightblue 1px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #discBot {
+        border: solid lightblue 1px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #skillsDiv {
+        border: solid lightblue 1px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        content: "";
+        display: table;
+        clear: both;
+        width: 100%;
+    
+    }
+
+    iframe {
+        width: 300px;
+        height: 300px;
+    }
+
+    #discBot iframe {
+        width: 300px;
+        height: 300px;
+    }
+
+    header {
+        color: lightslategrey
+    }
+}
