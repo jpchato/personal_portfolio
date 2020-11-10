@@ -107,6 +107,10 @@ iframe {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    content: "";
+    display: table;
+    clear: both;
+    width: 100%;
 
 }
 
@@ -115,3 +119,9 @@ iframe {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.column {
+    float: left;
+    width: 50%;
+}
+
