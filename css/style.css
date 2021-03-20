@@ -40,6 +40,12 @@ p {
     text-align: justify;
 }
 
+/* class='about_me_p' */
+.about_me_p {
+    width: 75%
+}
+
+
 nav {
     text-align: center; 
     width: 100%;
