@@ -42,28 +42,36 @@ li {
     list-style: none;
 }
 
-footer {
-    float: left;
-    text-align: center; 
-    width: 100%;
-    margin: 25px 25px 25px 25px;
-}
-
-footer a {
-    margin-left: 5px;
-}
-
 div{
     border: solid white 1px;
     text-align: center; 
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 iframe {
-    width: 100%;
+    width: 75%;
     height: 500px;  
-    
+    margin-left: 10%;
 }
+
+img {
+    width: 50%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+}
+
+footer a {
+    margin-left: 10px;
+}
+
+
+
+
 
 @media only screen and (max-width: 600px) {
     body {
