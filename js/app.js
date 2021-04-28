@@ -13,6 +13,6 @@ const getPokemon = async () => {
   }
 };
 
-
+getPokemon()
     
 console.log('dab')
