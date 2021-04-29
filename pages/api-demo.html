@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesse Pena</title>
+    <!-- dev -->
+    <link rel="stylesheet" href="/css/api-demo.css">
+    <!-- deployed -->
+    <link rel="stylesheet" href="/personal_portfolio/css/api-demo.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>
+        API Demo
+    </h1>
+    <nav>
+        <a href="/personal_portfolio/pages/projects.html">Projects</a>
+        <a href="https://github.com/jpchato">Personal Github</a>
+        <a href="https://github.com/PdxCodeGuild/class_crow/tree/master/Code/jesse_pena">Class Work Repo</a>
+        <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+        <a href="/personal_portfolio/pages/about.html">About Me</a>
+        <a href="/personal_portfolio/pages/api-demo.html"></a>
+    </nav>
+    <section>
+        
+        <p>
+            This section is a work in progress. I plan to showcase my ability to use an API and manipulate the DOM.
+        </p>
+        <p>
+            If you type in the name of a Pokemon and press the submit button, all of the Pokemon's abilities will be displayed on the DOM.
+        </p>
+    </section>
+    <form id='myForm' action="http://127.0.0.1:5500/pages/api-demo.html" method='get'>
+        <label for="Pokemon">Pokemon: </label>
+        <input type="text" id='Pokemon' name='Pokemon'><br><br>
+        <input id='Dab' type="submit" value='submit' onclick='myJsFunction()'>
+        
+    </form>
+    <div id='pokemonDiv'>
+
+    </div>
+    <footer>
+        <a href="https://twitter.com/jpchato">
+            Twitter
+        </a>
+        <a href="https://docs.google.com/document/d/1l7VLVoT_0GzVv5Swzv-TTS5fCpQA0mrDHcKxygNLoII/edit">
+            Resume
+        </a>
+    </footer>
+</body>
+</html>

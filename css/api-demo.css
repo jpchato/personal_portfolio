@@ -1,0 +1,38 @@
+html {
+    background-color: #ff7e30;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    text-align: center; 
+    width: auto;
+}
+
+nav a {
+    padding-left: 5px;
+}
+
+a {
+    color: #666370;
+    text-align: center;
+
+}
+
+li {
+    list-style: none;
+}
+
+footer {
+    float: left;
+    text-align: center; 
+    width: 100%;
+    margin: 25px 25px 25px 25px;
+}
+
+footer a {
+    margin-left: 5px;
+}
