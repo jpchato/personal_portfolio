@@ -27,12 +27,19 @@ li {
 }
 
 footer {
-    float: left;
     text-align: center; 
     width: 100%;
-    margin: 25px 25px 25px 25px;
 }
 
 footer a {
     margin-left: 5px;
 }
+
+section {
+    text-align: center;
+}
+
+#pokemonFormDiv {
+    text-align: center;
+}
+
