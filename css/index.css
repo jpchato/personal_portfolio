@@ -1,0 +1,39 @@
+html {
+    
+    background-color: gray;
+    
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+
+}
+
+
+
+#family_picture {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    width: 10%;
+}
+
+#nav_a_tags {
+    justify-content: end;
+}
+
+#nav_a_tags, a {
+    align-self: flex-end;
+    color: white
+}
+
+#JSON {
+    background-color: white;
+    width: auto;
+}
