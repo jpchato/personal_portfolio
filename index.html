@@ -4,26 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jesse Pena</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/app.js"></script>
 </head>
 <body>
-    <header>
-        Jesse Pena
-    </header>
-    <h2>
-        Software Developer
-    </h2>
+    
+    
     <nav>
-        <a href="/personal_portfolio/pages/projects.html">Projects</a>
-        <a href="https://github.com/jpchato" target="_blank">Personal Github</a>
-        <a href="https://github.com/PdxCodeGuild/class_crow/tree/master/Code/jesse_pena" target="_blank">Class Work Repo</a>
-        <a href="https://www.linkedin.com/in/jessepena4/" target="_blank">LinkedIn</a>
-        <a href="/personal_portfolio/pages/about.html">About Me</a>
-        <a href="/personal_portfolio/pages/api-demo.html">API Demo</a>
+        <header>
+            Jesse Pena <br>
+            Software Developer <br>
+            <img src='assets/the_fam.jpeg' alt='Jesse, Jessican, Cedar, and CJ' id='family_picture'>
+        </header>
+        <div id='nav_a_tags'>
+            <a href="/personal_portfolio/pages/projects.html">Projects</a>
+            <a href="https://github.com/jpchato" target="_blank">Personal Github</a>
+            <a href="https://github.com/PdxCodeGuild/class_crow/tree/master/Code/jesse_pena" target="_blank">Class Work Repo</a>
+            <a href="https://www.linkedin.com/in/jessepena4/" target="_blank">LinkedIn</a>
+            <a href="/personal_portfolio/pages/about.html">About Me</a>
+            <a href="/personal_portfolio/pages/api-demo.html">API Demo</a>
+        </div>
+        
     </nav>
+    <div id='JSON'>
+        <pre>
+            <code>
+                {"Software Developer": {
+                    "name": "Jesse Pena",
+                    "email": "jpchato@gmail.com",
+                    "phone number": "(310)-291-6029",
+                    "technical skills": [
+                        "Python", "JavaScript", "HTML", "CSS", "git", "Django", "Ubuntu", "Heroku", "GitHub"
+                    ],
+                    "Soft Skills": [
+                        "Emotional Intelligence", "Team Player", "Growth Mindset", "Open to Feedback", "Adaptable", "Communication: Listening, Speaking, and Writing", "Respectful"
+                    ]
+                    }
+                }
+            </code>
+        </pre>
+    </div>
     <div id='skillsDiv'>
         <section class='column'>
             <h4>
