@@ -1,4 +1,2 @@
-# personal_portfolio
-Personal portfolio
-# Repo for my portfolio website hosted with GitHub. Contact information is on the website.
-* Basic Personal Portfolio in Ubuntu
+# Personal Portfolio
+* This has become a playground for me, but it might provide some insight
