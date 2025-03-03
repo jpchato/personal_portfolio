@@ -2,59 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <!-- development -->
-    <!-- <link rel="stylesheet" href="/css/projects.css"> -->
-    <!-- deployment -->
-    <link rel="stylesheet" href="/personal_portfolio/css/projects.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <title>Projects - Jesse Pena</title>
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <h1>Personal Projects</h1>
-    <nav>
-        <a href="/personal_portfolio/index.html">Home</a>
-        <a href="/personal_portfolio/pages/projects.html">Projects</a>
-        <a href="https://github.com/jpchato" target="_blank">Personal Github</a>
-        <a href="https://github.com/PdxCodeGuild/class_crow/tree/master/Code/jesse_pena" target="_blank">Class Work Repo</a>
-        <a href="https://www.linkedin.com/in/jessepena4/" target="_blank">LinkedIn</a>
-        <a href="/personal_portfolio/pages/about.html">About Me</a>
-        <a href="/personal_portfolio/pages/api-demo.html">API Demo</a>
-    </nav>
-    <div id="natureShare">
-        <ul>
-            <li>
-                <a href="https://nature-share.herokuapp.com/">natureShare Website</a>
-            </li>
-            <li>
-                <a href="https://github.com/jpchato/nature-share">natureShare Github  Repo</a>
-            </li>
-        </ul>
-        <p>
-            Application developed with Django, VueJs, Python, JavaScript, HTML, CSS, Google Map API, and Wikipedia API.
-            (My google api map key has expired)
-        </p>
-        <img src="/personal_portfolio/assets/natureShareHomePage.PNG" alt="natureShare Image">
+    <header>
+        <h1>Projects</h1>
+        <h2>Automation & Infrastructure Solutions</h2>
+    </header>
 
-    </div>
-    <div id='discBot'>
-        
-        <a id='disc-img' href="https://github.com/PdxCodeGuild/class_crow/tree/master/Code/jesse_pena/project">
-            Discord Bot Repo
-        </a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="projects">
+        <h3>Inactive Volume Deletion Automation</h3>
         <p>
-            A discord bot I developed with webscraping op.gg and math.
+            Developed an automation process to identify and delete inactive volumes in storage environments. 
+            This project significantly reduced unused storage consumption and improved overall system efficiency. 
+            The implementation utilized Python and integrated with PowerMax, NetApp, and Infinidat storage platforms. 
         </p>
-        <iframe src="/personal_portfolio/assets/discordbot.PNG"  id="discord-iframe" frameborder="0"></iframe>
-    </div>
+
+        <h3>Inactive Zone Deletion on Cisco Switches</h3>
+        <p>
+            Created an automated method to identify and remove inactive zones within Cisco switches. 
+            The solution helped streamline network management by ensuring that outdated or unnecessary configurations were safely removed, 
+            reducing complexity and improving network performance.
+        </p>
+
+        <h3>Splunk Data Extraction & Dashboard Creation</h3>
+        <p>
+            Built custom Splunk queries and dashboards to extract meaningful insights from infrastructure logs. 
+            These dashboards provided real-time monitoring, enhancing operational visibility and troubleshooting efficiency.
+        </p>
+
+        <h3>Python Automation for Infrastructure Optimization</h3>
+        <p>
+            Developed multiple Python automation scripts to streamline infrastructure operations. 
+            These included data parsing, log analysis, and system health checks, helping reduce manual workload and increasing operational reliability.
+        </p>
+    </section>
+
     <footer>
-        <a href="https://twitter.com/jpchato">
-            Twitter
-        </a>
-        <a href="https://docs.google.com/document/d/1l7VLVoT_0GzVv5Swzv-TTS5fCpQA0mrDHcKxygNLoII/edit">
-            Resume
-        </a>
+        <p>&copy; 2025 Jesse Pena. All rights reserved.</p>
     </footer>
 </body>
 </html>
