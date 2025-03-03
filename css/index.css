@@ -95,30 +95,58 @@ ul li {
     border-radius: 5px;
 }
 
-/* Projects Page Styles */
-#projects {
-    max-width: 900px;
+/* Contact Page Styles */
+#contact {
+    max-width: 600px;
     margin: 50px auto;
     padding: 20px;
     background: #1a1a1a;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    text-align: left;
 }
 
-#projects h3 {
+#contact h3 {
     color: var(--primary-color);
     font-size: 1.6rem;
-    margin-top: 20px;
+    text-align: center;
 }
 
-#projects p {
+#contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact label {
     font-size: 1.1rem;
-    color: #ccc;
-    line-height: 1.5;
-    text-align: left;
-    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
     background: #222;
+    border: 1px solid #444;
+    color: white;
     border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact button {
+    margin-top: 15px;
+    padding: 10px;
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#contact button:hover {
+    background: #45a049;
 }
 
 /* Footer */
