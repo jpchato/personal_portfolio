@@ -134,3 +134,15 @@
 .ff-stack { display: grid; gap: calc(var(--ff-unit) * 1.25); }
 .ff-right { margin-left: auto; }
 .ff-muted { color: var(--ff-subtext); }
+
+.ff-table {
+  border-collapse: separate;
+  border-spacing: 0 0.75rem; /* vertical gap between rows */
+}
+
+.ff-table th,
+.ff-table td {
+  background: #0b0f26; /* FF menu dark background */
+  border: 1px solid #5aaaff; /* blue grid lines */
+  padding: 0.6rem 0.8rem;
+}

@@ -1,55 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Jesse Pena</title>
-    <link rel="stylesheet" href="../css/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Jesse Pena</title>
+
+  <!-- Final Fantasy menu stylesheet -->
+  <link rel="stylesheet" href="../css/ff-menus.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet" />
+
+  <style>
+    body { margin: 0; }
+    .site { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Projects</h1>
-        <h2>Automation & Infrastructure Solutions</h2>
+<body class="ff ff-theme--x">
+  <div class="site ff-stack">
+    <!-- HEADER -->
+    <header class="ff-window">
+      <div class="ff-titlebar">Projects</div>
+      <div class="ff-body">
+        <h1 style="margin:0 0 .25rem 0;">Automation &amp; Infrastructure Solutions</h1>
+        <p class="ff-muted" style="margin:0;">Python-first workflows that remove toil, reduce risk, and surface meaningful signals.</p>
+      </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <!-- NAV / COMMANDS -->
+    <nav class="ff-window">
+      <div class="ff-titlebar">Navigation</div>
+      <ul class="ff-list">
+        <li><a href="../index.html">Home</a></li>
+        <li class="is-active"><span class="ff-cursor" aria-hidden="true"></span><a href="./projects.html" aria-current="page">Projects</a></li>
+        <li><a href="./about.html">About Me</a></li>
+        <li><a href="https://www.linkedin.com/in/jessepena4/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/jpchato" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
     </nav>
 
-    <section id="projects">
-        <h3>Inactive Volume Deletion Automation</h3>
-        <p>
-            Developed an automation process to identify and delete inactive volumes in storage environments. 
-            This project significantly reduced unused storage consumption and improved overall system efficiency. 
-            The implementation utilized Python and integrated with PowerMax, NetApp, and Infinidat storage platforms. 
-        </p>
-
-        <h3>Inactive Zone Deletion on Cisco Switches</h3>
-        <p>
-            Created an automated method to identify and remove inactive zones within Cisco switches. 
-            The solution helped streamline network management by ensuring that outdated or unnecessary configurations were safely removed, 
-            reducing complexity and improving network performance.
-        </p>
-
-        <h3>Splunk Data Extraction & Dashboard Creation</h3>
-        <p>
-            Built custom Splunk queries and dashboards to extract meaningful insights from infrastructure logs. 
-            These dashboards provided real-time monitoring, enhancing operational visibility and troubleshooting efficiency.
-        </p>
-
-        <h3>Python Automation for Infrastructure Optimization</h3>
-        <p>
-            Developed multiple Python automation scripts to streamline infrastructure operations. 
-            These included data parsing, log analysis, and system health checks, helping reduce manual workload and increasing operational reliability.
-        </p>
+    <!-- PROJECTS LIST -->
+    <section id="projects" class="ff-window">
+      <div class="ff-titlebar">Featured Work</div>
+      <div class="ff-body">
+        <table class="ff-table">
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>What it does</th>
+              <th>Stack</th>
+              <th>Impact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Inactive Volume Deletion</strong></td>
+              <td>Identifies reclaimable storage volumes and automates safe deletion with guardrails and audit logs.</td>
+              <td>Python · REST APIs · PowerMax · NetApp · Infinidat · Pandas</td>
+              <td>Reduced unused capacity; faster cleanup cycles; consistent policy enforcement.</td>
+            </tr>
+            <b></b>
+            <tr>
+              <td><strong>Cisco Inactive Zone Cleanup</strong></td>
+              <td>Finds stale zones within zonesets and removes them via Cisco MDS APIs with dry-run and rollback.</td>
+              <td>Python · Cisco MDS NX-API · JSON · CLI utility</td>
+              <td>Simpler troubleshooting; safer zoning changes.</td>
+            </tr>
+            <b></b>
+            <tr>
+              <td><strong>Splunk Dashboards &amp; Alerts</strong></td>
+              <td>Dashboards and alerts to monitor storage infrastructure and switch health; alerting on actionable signals.</td>
+              <td>Splunk Dashboard Studio · SPL</td>
+              <td>Improved storage monitoring.</td>
+            </tr>
+            <b></b>
+            <tr>
+              <td><strong>ServiceNow Integrations</strong></td>
+              <td>Automates ticket creation/updates and status sync from automation jobs and monitoring events.</td>
+              <td>Python · REST APIs · ServiceNow</td>
+              <td>Less manual data entry; better auditability; clearer ownership.</td>
+            </tr>
+            <b></b>
+            <tr>
+              <td><strong>Infra Utility Scripts</strong></td>
+              <td>Reusable scripts for parsing logs, health checks, and reporting; designed to be composable and idempotent.</td>
+              <td>Python · Bash · Pandas · Requests</td>
+              <td>Reduced toil; easier handoffs.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Jesse Pena. All rights reserved.</p>
+    <!-- OPTIONAL NEXT STEPS / CONTACT -->
+    <section class="ff-window">
+      <div class="ff-titlebar">Next</div>
+      <div class="ff-body">
+        <ul class="ff-list">
+          <li><a href="./about.html">Read more about my approach</a></li>
+          <li><a href="https://github.com/jpchato" target="_blank" rel="noopener">Browse code on GitHub</a></li>
+          <li><a href="../index.html#skills">See core skills</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="ff-dialog" role="contentinfo">
+      <div class="ff-dialog__name">&copy; 2025</div>
+      <div>Jesse Pena. All rights reserved.</div>
     </footer>
+  </div>
 </body>
 </html>
