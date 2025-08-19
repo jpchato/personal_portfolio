@@ -1,60 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesse Pena - Python Developer & Automation Engineer</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/app.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jesse Pena - Python Developer & Automation Engineer</title>
+
+  <!-- Your base styles (kept) -->
+  <link rel="stylesheet" href="css/index.css" />
+
+  <!-- FF menu theme (new) -->
+  <link rel="stylesheet" href="css/ff-menus.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/app.js" defer></script>
+
+  <style>
+    /* Small page-level tweaks so the FF windows breathe nicely */
+    body { margin: 0; }
+    .site { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    #profile { width: 100%; max-width: 260px; border-radius: 8px; display: block; }
+    .about-grid { align-items: start; }
+    nav a { color: inherit; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Jesse Pena</h1>
-        <h2>Python Developer & Automation Engineer</h2>
+<body class="ff ff-theme--x">
+  <div class="site ff-stack">
+    <!-- HEADER -->
+    <header class="ff-window">
+      <div class="ff-titlebar">Profile</div>
+      <div class="ff-body">
+        <h1 style="margin: 0 0 .25rem 0;">Jesse Pena</h1>
+        <h2 style="margin: 0; font-weight: 500; color: var(--ff-subtext);">Python Developer &amp; Automation Engineer</h2>
+      </div>
     </header>
 
-    <section id="about">
-        <img id="profile" src="assets/the_fam.jpeg" alt="Jesse Pena">
-        <p>
+    <!-- ABOUT -->
+    <section id="about" class="ff-window">
+      <div class="ff-titlebar">About</div>
+      <div class="ff-grid about-grid">
+        <div>
+          <img id="profile" src="assets/the_fam.jpeg" alt="Jesse Pena" />
+        </div>
+        <div class="ff-body">
+          <p>
             As a Python Developer and Automation Engineer, I specialize in creating efficient and scalable solutions to optimize workflows. With a strong foundation in automation, infrastructure management, and data analysis, I am passionate about leveraging technology to drive efficiency and innovation.
-        </p>
+          </p>
+        </div>
+      </div>
     </section>
 
-    <nav>
-        <ul>
-            <li><a href="pages/projects.html">Projects</a></li>
-            <li><a href="https://github.com/jpchato" target="_blank">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/jessepena4/" target="_blank">LinkedIn</a></li>
-            <!-- <li><a href="pages/contact.html">Contact</a></li> -->
-        </ul>
+    <!-- NAV / COMMANDS -->
+    <nav class="ff-window">
+      <div class="ff-titlebar">Commands</div>
+      <ul class="ff-list">
+        <li class="is-active">
+          <span class="ff-cursor" aria-hidden="true"></span>
+          <a href="pages/projects.html">Projects</a>
+        </li>
+        <li><a href="pages/about.html">About Me</a></li>
+        <li><a href="https://github.com/jpchato" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/jessepena4/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <!-- <li><a href="pages/contact.html">Contact</a></li> -->
+      </ul>
     </nav>
 
-    <section id="skills">
-        <h3>Technical Skills</h3>
-        <ul>
-            <li>Python Development & Automation</li>
-            <li>Splunk Dashboard Studio & Core User</li>
-            <li>Git Version Control</li>
-            <li>PowerMax, NetApp, and Infinidat Storage</li>
-            <li>Cisco Zoning and Networking</li>
-            <li>ServiceNow</li>
+    <!-- TECHNICAL SKILLS -->
+    <section id="skills" class="ff-window">
+      <div class="ff-titlebar">Technical Skills</div>
+      <div class="ff-body">
+        <ul class="ff-list">
+          <li>Python Development &amp; Automation</li>
+          <li>Splunk Dashboard Studio &amp; Core User</li>
+          <li>Git Version Control</li>
+          <li>PowerMax, NetApp, and Infinidat Storage</li>
+          <li>Cisco Zoning and Networking</li>
+          <li>ServiceNow</li>
         </ul>
+      </div>
     </section>
 
-    <section id="soft-skills">
-        <h3>Soft Skills</h3>
-        <ul>
-            <li>Problem-Solving</li>
-            <li>Effective Communication</li>
-            <li>Team Collaboration</li>
-            <li>Adaptability</li>
+    <!-- SOFT SKILLS -->
+    <section id="soft-skills" class="ff-window">
+      <div class="ff-titlebar">Soft Skills</div>
+      <div class="ff-body">
+        <ul class="ff-list">
+          <li>Problem-Solving</li>
+          <li>Effective Communication</li>
+          <li>Team Collaboration</li>
+          <li>Adaptability</li>
         </ul>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Jesse Pena. All rights reserved.</p>
+    <!-- FOOTER / DIALOG -->
+    <footer class="ff-dialog" role="contentinfo">
+      <div class="ff-dialog__name">&copy; 2025</div>
+      <div>Jesse Pena. All rights reserved.</div>
     </footer>
+  </div>
+
+  <!-- Optional CRT overlay: uncomment for retro scanline effect -->
+  <!-- <div class="ff-scanlines"></div> -->
 </body>
 </html>

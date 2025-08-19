@@ -1,44 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <!-- deployment -->
-    <link rel="stylesheet" href="/personal_portfolio/css/style.css">
-    <!-- development -->
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Jesse Pena</title>
+
+  <!-- Use the FF menu stylesheet you created -->
+  <link rel="stylesheet" href="../css/ff-menus.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet" />
 </head>
-<body>
-    
-    <header>
-        About Me
+<body class="ff ff-theme--x">
+  <div class="ff-container ff-stack">
+    <!-- Header / Title -->
+    <header class="ff-window">
+      <div class="ff-titlebar">About Me</div>
+      <div class="ff-body">
+        <h1 style="margin: 0 0 .25rem 0;">Jesse Pena</h1>
+        <p class="ff-muted" style="margin: 0;">Python Developer &amp; Automation Engineer · Army Veteran</p>
+      </div>
     </header>
-    <nav>
-        <a href="/personal_portfolio/index.html">Home</a>
-        <a href="/personal_portfolio/pages/projects.html">Projects</a>
-        <a href="https://github.com/jpchato" target="_blank">Personal Github</a>
-        <a href="https://github.com/PdxCodeGuild/class_crow/tree/master/Code/jesse_pena" target="_blank">Class Work Repo</a>
-        <a href="https://www.linkedin.com/in/jessepena4/" target="_blank">LinkedIn</a>
-        <a href="/personal_portfolio/pages/about.html">About Me</a>
-        <a href="/personal_portfolio/pages/api-demo.html">API Demo</a>
+
+    <!-- Navigation Commands -->
+    <nav class="ff-window">
+      <div class="ff-titlebar">Navigation</div>
+      <div class="ff-body ff-nav">
+        <a href="../index.html">Home</a>
+        <a href="./projects.html">Projects</a>
+        <a href="https://github.com/jpchato" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/PdxCodeGuild/class_crow/tree/master/Code/jesse_pena" target="_blank" rel="noopener">Class Work Repo</a>
+        <a href="https://www.linkedin.com/in/jessepena4/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="./about.html" aria-current="page">About</a>
+        <a href="./api-demo.html">API Demo</a>
+      </div>
     </nav>
-    <p class='about_me_p'>
-        I’m Jesse Pena, an Army veteran and a software developer. I've always enjoyed working with computers and I’ve been interested in learning how to code since I learned that students were using R for statistical analysis for ecology research projects. I developed quantitative reasoning skills from my studies in ecology. Ideally, I'd like to use my skills to help develop code that helps people find  joy and/or success in their lives. That can be through creating an entertaining game, simplifying a tedious task, or helping them organize their life.  
-    </p>
-    <p class='about_me_p'>
-        I hope that the work I find coding will be emotionally and intellectually fulfilling. I believe that a career in software development will help me create a better life for my loved ones. 
-    </p>
-    <p class='about_me_p'>
-        I’ve learned that coding is team based. I am a strong team member. I’m adaptable and  willing to change. I know how to follow and I know how to lead others. I've been in a supervisory role in most of my jobs, including my most recent job as consulting utility forester. I’ve also been a supporting team member as well. I believe my success as a leader and team member has been a result of my strong communication skills and attention to detail. 
-    </p>
-    <p class='about_me_p'>
-        I've been coding since February 2020 year and I've completed two coding bootcamps. The first was Code Fellows in Seattle and the second was PDX Code Guild in Portland. I've worked with JavaScript, Python, HTML, and CSS. I've worked with various frameworks including Django, React, NextJs, and VueJS. I've deployed applications through Heroku and Digitcal Ocean. I am familiar with Git and navigating files with Ubuntu. I take ownership of my work, I'm optimistic, and I'm always willing to learn. You want me on your team.
-    </p>
+
+    <!-- Hero / Bio -->
+    <section class="ff-window">
+      <div class="ff-titlebar">Bio</div>
+      <div class="ff-body ff-lead">
+        <p>
+          I’m a Python-focused automation engineer who turns manual, error-prone workflows into reliable systems. My work centers on practical tools for infrastructure teams—automating storage cleanup and monitoring, streamlining Cisco zoning, integrating with enterprise services, and building dashboards that deliver real value.
+        </p>
+        <p>
+          My guiding principle is simple: ship tools that save people time, reduce risk, and, whenever possible, make the work a little more enjoyable.
+        </p>
+      </div>
+    </section>
+
+    <!-- Experience & Values -->
+    <section class="ff-window">
+      <div class="ff-titlebar">What I Bring</div>
+      <div class="ff-body">
+        <ul class="ff-list">
+          <li><strong>Python Automation:</strong> API integrations, data processing with Pandas, storage cleanup workflows, and CLI/utility scripts.</li>
+          <li><strong>Infrastructure Expertise:</strong> NetApp, PowerMax, and Infinidat storage; Cisco MDS zoning automation.</li>
+          <li><strong>Observability &amp; Reporting:</strong> Splunk Dashboard Studio and alerting pipelines that surface meaningful signals.</li>
+          <li><strong>Service Integration:</strong> ServiceNow automation for tickets, notifications, and incident workflows.</li>
+          <li><strong>Team Practices:</strong> Clear naming, modular functions, reusable code, and documentation that explains the “why.”</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Tech Snapshot -->
+    <section class="ff-window">
+      <div class="ff-titlebar">Tech Snapshot</div>
+      <div class="ff-body">
+        <table class="ff-table">
+          <thead>
+            <tr>
+              <th>Area</th>
+              <th>Tools &amp; Platforms</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Languages</td>
+              <td>Python, JavaScript, Bash</td>
+            </tr>
+            <tr>
+              <td>Frameworks</td>
+              <td>Django, React, Vue, Next.js</td>
+            </tr>
+            <tr>
+              <td>Storage &amp; Infra</td>
+              <td>PowerMax, NetApp, Infinidat, Cisco MDS</td>
+            </tr>
+            <tr>
+              <td>Automation &amp; APIs</td>
+              <td>REST APIs, Requests, Asyncio, Pandas</td>
+            </tr>
+            <tr>
+              <td>Observability</td>
+              <td>Splunk Dashboard Studio, Core User</td>
+            </tr>
+            <tr>
+              <td>Integrations</td>
+              <td>ServiceNow, Webhooks</td>
+            </tr>
+            <tr>
+              <td>Version Control</td>
+              <td>Git, GitHub</td>
+            </tr>
+            <tr>
+              <td>Deployments</td>
+              <td>Heroku, DigitalOcean</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer as dialog -->
+    <footer class="ff-dialog" role="contentinfo">
+      <div class="ff-dialog__name">&copy; 2025</div>
+      <div>Jesse Pena. All rights reserved.</div>
+    </footer>
+  </div>
 </body>
-<div>
-    <h4 id='CJ the Dog'>CJ the Dog</h4>
-    <img src="/personal_portfolio/assets/cj.jpg" alt="CJ, my pitty">
-</div>
 </html>
