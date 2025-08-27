@@ -5,10 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "node server.js",
-    "seed": "node scripts/seed.mjs seeds/quotes.json"
+    "seed:libsql": "node scripts/seed-libsql.mjs"
   },
   "dependencies": {
-    "better-sqlite3": "^9.6.0",
+    "@libsql/client": "^0.15.14",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2"

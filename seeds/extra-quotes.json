@@ -1,0 +1,86 @@
+[
+  {
+    "text": "But you gotta understand that there ain't no gettin' offa this train we're on, till we get to the end of the line.",
+    "game": "FFVII",
+    "character": "Barret Wallace",
+    "source": "Gongaga conversation",
+    "tags": ["ff7", "determination", "classic"]
+  },
+  {
+    "text": "Words aren't the only way to tell someone how you feel.",
+    "game": "FFVII",
+    "character": "Tifa Lockhart",
+    "source": "Highwind scene",
+    "tags": ["ff7", "romance", "classic"]
+  },
+  {
+    "text": "I had a dream, too. It wasn't nice, though... I dreamt I was a moron.",
+    "game": "FFVIII",
+    "character": "Squall Leonhart",
+    "source": "After first Laguna dream",
+    "tags": ["ff8", "funny", "self-deprecating"]
+  },
+  {
+    "text": "How do you prove that you exist...? Maybe we don't exist...",
+    "game": "FFIX",
+    "character": "Vivi Ornitier",
+    "source": "Early Alexandria",
+    "tags": ["ff9", "existential", "classic"]
+  },
+  {
+    "text": "This is it. This... is your story. It all begins here.",
+    "game": "FFX",
+    "character": "Auron",
+    "source": "Zanarkand prologue",
+    "tags": ["ff10", "mentor", "classic"]
+  },
+  {
+    "text": "Now is the time to choose! Die and be free of pain, or live and fight your sorrow! Now is the time to shape your stories! Your fate is in your hands!",
+    "game": "FFX",
+    "character": "Auron",
+    "source": "Before Yunalesca",
+    "tags": ["ff10", "motivational", "hype"]
+  },
+  {
+    "text": "We live to make the impossible possible. That is our Focus!",
+    "game": "FFXIII",
+    "character": "Lightning",
+    "source": "Resolve speech",
+    "tags": ["ff13", "focus", "motivational"]
+  },
+  {
+    "text": "If you change the future, you change the past. The effects ripple outwards, up and down the timeline.",
+    "game": "FFXIII-2",
+    "character": "Noel Kreiss",
+    "source": "Historia Crux explanation",
+    "tags": ["ff13-2", "time-travel", "lore"]
+  },
+  {
+    "text": "I fight to give people hope!",
+    "game": "Lightning Returns",
+    "character": "Lightning",
+    "source": "Battle dialogue",
+    "tags": ["lrff13", "hope", "savior"]
+  },
+  {
+    "text": "A smile better suits a hero.",
+    "game": "FFXIV",
+    "character": "Haurchefant Greystone",
+    "source": "The Vault",
+    "tags": ["ff14", "heavensward", "tearjerker"]
+  },
+  {
+    "text": "That's it! I've come up with a new recipe!",
+    "game": "FFXV",
+    "character": "Ignis Scientia",
+    "source": "Field discovery",
+    "tags": ["ff15", "meme", "funny"]
+  },
+  {
+    "text": "The only fantasy here is yours, and we shall be its final witness.",
+    "game": "FFXVI",
+    "character": "Clive Rosfield",
+    "source": "Final confrontation",
+    "tags": ["ff16", "finale", "title-drop"]
+  }
+]
