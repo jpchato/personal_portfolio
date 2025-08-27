@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Fantasy Quotes — Jesse Pena</title>
+  <link rel="stylesheet" href="../css/ff-menus.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; }
+    .site { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    .controls { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 12px; align-items: end; }
+    .controls label { font-size: 0.85rem; display:block; margin-bottom: 4px; color: var(--ff-subtext); }
+    .controls input, .controls select { width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #4e89c9; background: #0b0f26; color: var(--ff-text); }
+    .quote-card blockquote { margin: 0; font-size: 1.15rem; }
+    .meta { color: var(--ff-subtext); margin-top: 6px; font-size: .9rem; }
+    .grid { display: grid; gap: 12px; }
+    .actions { display:flex; gap: 8px; }
+    button { cursor: pointer; border: 1px solid var(--ff-win-edge-light); background: #0b0f26; color: var(--ff-text); padding: 8px 12px; border-radius: 6px; }
+    button:hover { background: rgba(255,255,255,0.06); }
+    .pill { display:inline-block; padding: 2px 8px; border: 1px solid #5aaaff; border-radius: 999px; font-size: .8rem; margin-right: 6px; }
+    .muted { color: var(--ff-subtext); }
+  </style>
+</head>
+<body class="ff ff-theme--x">
+  <div class="site ff-stack">
+    <!-- HEADER -->
+    <header class="ff-window">
+      <div class="ff-titlebar">Final Fantasy Quotes</div>
+      <div class="ff-body">
+        <p class="muted" style="margin:0">Pull a random line or browse by game/character.</p>
+      </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="ff-window">
+      <div class="ff-titlebar">Navigation</div>
+      <ul class="ff-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <li class="is-active"><span class="ff-cursor" aria-hidden="true"></span><a href="./ff-quotes.html" aria-current="page">FF Quotes</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="https://github.com/jpchato" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+
+    <!-- RANDOM QUOTE -->
+    <section class="ff-window quote-card">
+      <div class="ff-titlebar">Random Quote</div>
+      <div class="ff-body grid">
+        <div id="random-quote"><em class="muted">Click Roll to get a line…</em></div>
+        <div class="actions">
+          <button id="roll">Roll Quote</button>
+          <button id="roll-clear" title="Clear filters before roll">Clear Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BROWSER / FILTERS -->
+    <section class="ff-window">
+      <div class="ff-titlebar">Browse</div>
+      <div class="ff-body grid">
+        <div class="controls">
+          <div>
+            <label for="game">Game</label>
+            <select id="game"><option value="">Any</option></select>
+          </div>
+          <div>
+            <label for="character">Character</label>
+            <select id="character"><option value="">Any</option></select>
+          </div>
+          <div>
+            <label for="tag">Tag</label>
+            <select id="tag"><option value="">Any</option></select>
+          </div>
+          <div>
+            <button id="apply">Apply</button>
+          </div>
+        </div>
+        <div>
+          <label for="search" class="muted">Text search</label>
+          <input id="search" type="text" placeholder="e.g., help people" />
+        </div>
+        <div class="actions">
+          <button id="refresh">Refresh List</button>
+          <span id="count" class="muted" style="align-self:center"></span>
+        </div>
+        <div id="list" class="grid"></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="ff-dialog" role="contentinfo">
+      <div class="ff-dialog__name">&copy; 2025</div>
+      <div>Jesse Pena. All rights reserved.</div>
+    </footer>
+  </div>
+
+  <script>
+    const API = (location.host.includes(':5500'))
+    ? 'http://localhost:5173/api'  // dev: site on 5500, API on 5173
+    : '/api';                       // prod: same-origin (via proxy or same host)
+    const els = {
+      game: document.getElementById('game'),
+      character: document.getElementById('character'),
+      tag: document.getElementById('tag'),
+      search: document.getElementById('search'),
+      list: document.getElementById('list'),
+      count: document.getElementById('count'),
+      roll: document.getElementById('roll'),
+      rollClear: document.getElementById('roll-clear'),
+      apply: document.getElementById('apply'),
+      refresh: document.getElementById('refresh'),
+      randomQuote: document.getElementById('random-quote')
+    };
+
+    function qParams(extra={}) {
+      const p = new URLSearchParams();
+      const g = els.game.value.trim(); if (g) p.set('game', g);
+      const c = els.character.value.trim(); if (c) p.set('character', c);
+      const t = els.tag.value.trim(); if (t) p.set('tag', t);
+      const q = els.search.value.trim(); if (q) p.set('q', q);
+      for (const [k,v] of Object.entries(extra)) if (v!==undefined && v!==null && v!=='') p.set(k, v);
+      return p.toString();
+    }
+
+    async function fetchJSON(path) {
+      const res = await fetch(path);
+      const j = await res.json();
+      if (!j.ok) throw new Error(j.error || 'Request failed');
+      return j;
+    }
+
+    function renderQuote(q) {
+      const tags = (q.tags||[]).map(t=>`<span class="pill">${t}</span>`).join(' ');
+      return `
+        <blockquote>“${q.text}”</blockquote>
+        <div class="meta">${[q.character, q.game].filter(Boolean).join(' — ') || ''}</div>
+        <div>${tags}</div>
+        ${q.source ? `<div class="muted">Source: ${q.source}</div>` : ''}
+      `;
+    }
+
+    async function rollRandom() {
+      try {
+        els.randomQuote.innerHTML = '<em class="muted">Rolling…</em>';
+        const url = `${API}/quotes/random${qParams() ? '?' + qParams() : ''}`;
+        const j = await fetchJSON(url);
+        els.randomQuote.innerHTML = renderQuote(j.data);
+      } catch (e) {
+        els.randomQuote.innerHTML = '<em class="muted">No quotes found for current filters.</em>';
+      }
+    }
+
+    async function loadList() {
+      try {
+        els.list.innerHTML = '';
+        const url = `${API}/quotes?${qParams({limit: 50, offset: 0})}`;
+        const j = await fetchJSON(url);
+        els.count.textContent = `${j.total} result${j.total===1?'':'s'}`;
+        if (!j.data.length) {
+          els.list.innerHTML = '<em class="muted">No results. Try clearing filters.</em>';
+          return;
+        }
+        const frag = document.createDocumentFragment();
+        j.data.forEach(q => {
+          const sec = document.createElement('section');
+          sec.className = 'ff-window quote-card';
+          sec.innerHTML = `<div class="ff-body">${renderQuote(q)}</div>`;
+          frag.appendChild(sec);
+        });
+        els.list.appendChild(frag);
+      } catch (e) {
+        els.count.textContent = '';
+        els.list.innerHTML = '<em class="muted">Failed to load quotes.</em>';
+      }
+    }
+
+    function dedupe(arr){ return Array.from(new Set(arr.filter(Boolean).map(s=>String(s)))).sort(); }
+
+    async function initFilters() {
+      try {
+        const j = await fetchJSON(`${API}/quotes?limit=100&offset=0`);
+        const games = dedupe(j.data.map(q=>q.game));
+        const chars = dedupe(j.data.map(q=>q.character));
+        const tags = dedupe(j.data.flatMap(q=>Array.isArray(q.tags)?q.tags:[]));
+        for (const g of games) els.game.insertAdjacentHTML('beforeend', `<option value="${g}">${g}</option>`);
+        for (const c of chars) els.character.insertAdjacentHTML('beforeend', `<option value="${c}">${c}</option>`);
+        for (const t of tags) els.tag.insertAdjacentHTML('beforeend', `<option value="${t}">${t}</option>`);
+      } catch {}
+    }
+
+    // Events
+    els.roll.addEventListener('click', rollRandom);
+    els.rollClear.addEventListener('click', ()=>{ els.game.value=''; els.character.value=''; els.tag.value=''; rollRandom(); });
+    els.apply.addEventListener('click', ()=>{ loadList(); });
+    els.refresh.addEventListener('click', ()=>{ els.search.value=''; loadList(); });
+    els.search.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); loadList(); } });
+
+    // Boot
+    (async function(){
+      await initFilters();
+      await rollRandom();
+      await loadList();
+    })();
+  </script>
+</body>
+</html>
