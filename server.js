@@ -18,9 +18,12 @@ import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import { createClient } from '@libsql/client'
+import rateLimit from 'express-rate-limit'
 
 const app = express()
+app.set('trust proxy', 1) // ensure correct client IPs behind Render/other proxies
 app.use(express.json({ limit: '256kb' }))
+const IS_PROD = process.env.NODE_ENV === 'production'
 
 // --- CORS: allow your dev + prod origins ----------------------------------
 const allowed = new Set([
@@ -36,6 +39,22 @@ app.use(cors({
     return cb(new Error('Not allowed by CORS: ' + origin))
   },
 }))
+
+// --- Rate limiting ----------------------------------------------------------
+// Limit write attempts (including unauthorized ones) to protect the API
+const postLimiter = rateLimit({
+  windowMs: 10 * 60 * 1000,           // 10 minutes
+  max: IS_PROD ? 20 : 0,              // disable in dev; 20 per 10 min in prod
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { ok: false, error: 'Too many requests, please slow down.' },
+  handler: (req, res) => {
+    if (!IS_PROD) console.warn('Rate limit hit:', req.ip, req.path)
+    res.status(429).json({ ok: false, error: 'Too many requests' })
+  },
+  // Bucket by Authorization token if present, else by IP
+  keyGenerator: (req) => (req.headers.authorization || req.ip)
+})
 
 // --- DB client (Turso/libSQL) ---------------------------------------------
 if (!process.env.TURSO_DB_URL || !process.env.TURSO_DB_TOKEN) {
@@ -158,7 +177,7 @@ app.get('/api/quotes/random', async (req, res) => {
 })
 
 // POST /api/quotes  (auth required)
-app.post('/api/quotes', requireAuth, async (req, res) => {
+app.post('/api/quotes', postLimiter, requireAuth, async (req, res) => {
   try {
     const { text, game = null, character = null, source = null, tags = [] } = req.body || {}
     if (!text || typeof text !== 'string' || !text.trim()) {
