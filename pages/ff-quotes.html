@@ -97,9 +97,9 @@
   </div>
 
   <script>
-    const API = (location.host.includes(':5500'))
-    ? 'http://localhost:5173/api'  // dev: site on 5500, API on 5173
-    : '/api';                       // prod: same-origin (via proxy or same host)
+    const API = (location.hostname.includes('localhost'))
+    ? 'http://localhost:5173/api'                      // local dev
+    : 'https://personal-portfolio-1jm1.onrender.com/api';  // LIVE API
     const els = {
       game: document.getElementById('game'),
       character: document.getElementById('character'),
